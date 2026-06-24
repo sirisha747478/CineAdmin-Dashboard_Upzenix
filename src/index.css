@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "react-big-calendar/lib/css/react-big-calendar.css";
+
+@theme {
+  --color-primary: #3b82f6;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200;
+  }
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+.dark .rbc-month-view, .dark .rbc-time-view, .dark .rbc-header {
+  border-color: #374151;
+}
+.dark .rbc-day-bg + .rbc-day-bg, .dark .rbc-month-row + .rbc-month-row,
+.dark .rbc-time-content, .dark .rbc-timeslot-group, .dark .rbc-day-slot .rbc-time-slot {
+  border-color: #374151;
+}
+.dark .rbc-off-range-bg {
+  background-color: #1f2937;
+}
+.dark .rbc-today {
+  background-color: #374151;
+}
